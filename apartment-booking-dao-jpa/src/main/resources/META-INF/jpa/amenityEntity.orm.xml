@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<entity-mappings xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm
+http://xmlns.jcp.org/xml/ns/persistence/orm_1_0.xsd"
+                 version="2.1">
+    <description>Amenity Entity</description>
+    <package>com.epam.apartmentbooking.entity</package>
+    <entity class="AmenityEntity" name="AmenityEntity">
+        <table name="T_AMENITIES"/>
+        <attributes>
+            <id name="apartmentId">
+                <column name="T_APARTMENT_AP_ID"/>
+            </id>
+            <basic name="wifi">
+                <column name="AM_WIRELESS"/>
+            </basic>
+            <basic name="freeParking">
+                <column name="AM_FREE_PARKING"/>
+            </basic>
+            <one-to-one name="apartment">
+                <primary-key-join-column name="T_APARTMENT_AP_ID" referenced-column-name="AP_ID"/>
+            </one-to-one>
+        </attributes>
+    </entity>
+</entity-mappings>

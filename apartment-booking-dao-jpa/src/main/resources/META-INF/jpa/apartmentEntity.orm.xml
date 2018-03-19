@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<entity-mappings xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm
+                 http://xmlns.jcp.org/xml/ns/persistence/orm_1_0.xsd"
+                 version="2.1">
+    <description>Apartment Entity</description>
+    <package>com.epam.apartmentbooking.entity</package>
+    <entity class="ApartmentEntity" name="ApartmentEntity">
+        <table name="T_APARTMENT"/>
+        <attributes>
+            <id name="id">
+                <column name="AP_ID"/>
+            </id>
+            <many-to-one name="owner" fetch="LAZY">
+                <join-column name="T_OWNER_OW_ID" referenced-column-name="OW_ID"/>
+            </many-to-one>
+            <one-to-one name="amenities" fetch="LAZY" target-entity="AmenityEntity" mapped-by="apartment"/>
+            <one-to-one name="availability" fetch="LAZY" target-entity="AvailabilityEntity" mapped-by="apartment"/>
+            <one-to-one name="price" fetch="LAZY" target-entity="PriceEntity" mapped-by="apartment"/>
+            <one-to-one name="space" fetch="LAZY" target-entity="SpaceEntity" mapped-by="apartment"/>
+            <one-to-many name="bookings" fetch="LAZY" target-entity="BookingEntity" mapped-by="apartment"/>
+        </attributes>
+    </entity>
+</entity-mappings>

@@ -1,0 +1,29 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="1.0">
+    <persistence-unit name="entities">
+
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+
+        <class>com.epam.apartmentbooking.entity.ApartmentEntity</class>
+
+        <class>com.epam.apartmentbooking.entity.AmenityEntity</class>
+
+        <class>com.epam.apartmentbooking.entity.AvailabilityEntity</class>
+
+        <class>com.epam.apartmentbooking.entity.BookingEntity</class>
+
+        <class>com.epam.apartmentbooking.entity.OwnerEntity</class>
+
+        <class>com.epam.apartmentbooking.entity.PriceEntity</class>
+
+        <class>com.epam.apartmentbooking.entity.RoleEntity</class>
+
+        <class>com.epam.apartmentbooking.entity.SpaceEntity</class>
+
+        <class>com.epam.apartmentbooking.entity.UserEntity</class>
+
+
+        <properties>
+
+        </properties>
+    </persistence-unit>
+</persistence>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.epam.apartmentbooking.entity">
+    <class name="AvailabilityEntity" table="T_AVAILABILITY">
+        <id name="apartmentId" column="T_APARTMENT_AP_ID">
+            <generator class="foreign">
+                <param name="property">apartment</param>
+            </generator>
+        </id>
+        <property name="minNights" column="AV_MIN_NIGHT" />
+        <one-to-one name="apartment" constrained="true" class="ApartmentEntity"/>
+    </class>
+</hibernate-mapping>

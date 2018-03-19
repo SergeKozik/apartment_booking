@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+    <context:annotation-config />
+
+    <import resource="classpath:applicationContext-dao.xml" />
+    <import resource="classpath:applicationContext-dao-default.xml" />
+
+    <context:component-scan base-package="com.epam.apartmentbooking.service" />
+    <context:component-scan base-package="com.epam.apartmentbooking.service.impl" />
+    <context:component-scan base-package="com.epam.apartmentbooking.service.dozer.impl" />
+
+    <bean class="org.dozer.spring.DozerBeanMapperFactoryBean">
+        <property name="mappingFiles" value="classpath:/mapping/*_mapping.xml" />
+
+        <property name="customConverters">
+            <list>
+                <bean class="com.epam.apartmentbooking.service.dozer.impl.MonetaryAmountConverter" />
+                <bean class="com.epam.apartmentbooking.service.dozer.impl.StringToDateConverter" />
+                <bean class="com.epam.apartmentbooking.service.dozer.impl.BigDecimalToMonetaryAmountConverter" />
+                <bean class="com.epam.apartmentbooking.service.dozer.impl.ApartmentIdToNameConverter" />
+                <bean class="com.epam.apartmentbooking.service.dozer.impl.RoleToStringConverter"/>
+                <bean class="com.epam.apartmentbooking.service.dozer.impl.RoleToAuthoritiesConverter"/>
+                <bean class="com.epam.apartmentbooking.service.dozer.impl.StringToRoomTypeConverter"/>
+            </list>
+        </property>
+    </bean>
+</beans>

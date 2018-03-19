@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://dozer.sourceforge.net http://dozer.sourceforge.net/schema/beanmapping.xsd">
+
+    <mapping>
+        <class-a>com.epam.apartmentbooking.entity.ApartmentEntity</class-a>
+        <class-b>com.epam.apartmentbooking.bean.ApartmentViewBean</class-b>
+    </mapping>
+
+    <mapping>
+        <class-a>com.epam.apartmentbooking.entity.OwnerEntity</class-a>
+        <class-b>com.epam.apartmentbooking.bean.OwnerViewBean</class-b>
+    </mapping>
+
+    <mapping>
+        <class-a>com.epam.apartmentbooking.entity.SpaceEntity</class-a>
+        <class-b>com.epam.apartmentbooking.bean.SpaceViewBean</class-b>
+
+        <field custom-converter="com.epam.apartmentbooking.service.dozer.impl.StringToRoomTypeConverter">
+            <a>roomType</a>
+            <b>roomType</b>
+        </field>
+    </mapping>
+
+    <mapping>
+        <class-a>com.epam.apartmentbooking.entity.AmenityEntity</class-a>
+        <class-b>com.epam.apartmentbooking.bean.AmenityViewBean</class-b>
+    </mapping>
+
+    <mapping>
+        <class-a>com.epam.apartmentbooking.entity.AvailabilityEntity</class-a>
+        <class-b>com.epam.apartmentbooking.bean.AvailabilityViewBean</class-b>
+    </mapping>
+
+    <mapping>
+        <class-a>com.epam.apartmentbooking.entity.PriceEntity</class-a>
+        <class-b>com.epam.apartmentbooking.bean.PriceViewBean</class-b>
+
+        <!--<field custom-converter="com.epam.apartmentbooking.service.dozer.impl.BigDecimalToMonetaryAmountConverter">
+            <a>daily</a>
+            <b>daily</b>
+        </field>-->
+    </mapping>
+
+</mappings>

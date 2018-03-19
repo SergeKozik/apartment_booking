@@ -1,0 +1,181 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.epam.apartmentbooking</groupId>
+  <artifactId>apartment-booking</artifactId>
+  <version>1.0-SNAPSHOT</version>
+
+
+    <modules>
+        <module>apartment-booking-entity</module>
+        <module>apartment-booking-dao</module>
+        <module>apartment-booking-service</module>
+        <module>apartment-booking-bean</module>
+        <module>apartment-booking-controller</module>
+      <module>apartment-booking-webapp</module>
+        <module>apartment-booking-rest</module>
+        <module>apartment-booking-dao-jdbctemplate</module>
+        <module>apartment-booking-dao-default</module>
+        <module>apartment-booking-dao-jpa</module>
+    </modules>
+
+    <packaging>pom</packaging>
+
+  <name>apartment-booking</name>
+  <url>http://maven.apache.org</url>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <spring.version>4.3.4.RELEASE</spring.version>
+    <spring.data.version>1.10.7.RELEASE</spring.data.version>
+    <spring.security.version>4.2.1.RELEASE</spring.security.version>
+    <hibernate.version>5.1.0.Final</hibernate.version>
+    <mysql.version>5.1.40</mysql.version>
+    <validation-api.version>1.1.0.Final</validation-api.version>
+    <dozer.version>5.5.1</dozer.version>
+    <servlets.version>3.0.1</servlets.version>
+    <tiles.version>3.0.5</tiles.version>
+    <jstl.version>1.2</jstl.version>
+    <jackson.version>2.8.5</jackson.version>
+    <apache-dbcp.version>2.0.1</apache-dbcp.version>
+    <mockito.version>2.7.21</mockito.version>
+    <junit.version>4.12</junit.version>
+    <hamcrest.version>1.3</hamcrest.version>
+    <dbunit.version>2.5.1</dbunit.version>
+    <oracle-jdbc.version>12.1.0.2</oracle-jdbc.version>
+    <xerces.version>2.10.0</xerces.version>
+    <hibernate.version>5.0.1.Final</hibernate.version>
+    <javax.persistence.version>1.0</javax.persistence.version>
+  </properties>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>org.mockito</groupId>
+      <artifactId>mockito-core</artifactId>
+      <version>${mockito.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.hamcrest</groupId>
+      <artifactId>hamcrest-all</artifactId>
+      <version>${hamcrest.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.springframework</groupId>
+      <artifactId>spring-test</artifactId>
+      <version>${spring.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+  </dependencies>
+
+  <build>
+
+    <testSourceDirectory>${basedir}/src/integration-test/java/</testSourceDirectory>
+    <testResources>
+      <testResource>
+        <directory>${basedir}/src/integration-test/resources/</directory>
+      </testResource>
+    </testResources>
+
+    <plugins>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>2.6</version>
+        <executions>
+          <execution>
+            <id>copy--common-resources</id>
+            <phase>initialize</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${basedir}/src/integration-test/resources/</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>${basedir}/src/main/resources</directory>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.1</version>
+        <configuration>
+          <source>1.8</source>
+          <target>1.8</target>
+        </configuration>
+      </plugin>
+
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>2.8.1</version>
+      </plugin>
+
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-failsafe-plugin</artifactId>
+        <version>2.8.1</version>
+        <configuration>
+        </configuration>
+        <executions>
+          <execution>
+            <goals>
+              <goal>integration-test</goal>
+              <goal>verify</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>versions-maven-plugin</artifactId>
+        <version>2.3</version>
+      </plugin>
+    </plugins>
+  </build>
+
+  <repositories>
+    <repository>
+      <id>maven.oracle.com</id>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>false</enabled>
+      </snapshots>
+      <url>https://maven.oracle.com</url>
+      <layout>default</layout>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>maven.oracle.com</id>
+      <url>https://maven.oracle.com</url>
+    </pluginRepository>
+  </pluginRepositories>
+
+
+</project>

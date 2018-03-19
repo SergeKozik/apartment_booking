@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://dozer.sourceforge.net http://dozer.sourceforge.net/schema/beanmapping.xsd">
+
+    <mapping>
+        <class-a>com.epam.apartmentbooking.entity.CriteriaApartmentDTO</class-a>
+        <class-b>com.epam.apartmentbooking.bean.CriteriaApartmentBean</class-b>
+    </mapping>
+
+    <mapping>
+        <class-a>com.epam.apartmentbooking.entity.CriteriaOwnerDTO</class-a>
+        <class-b>com.epam.apartmentbooking.bean.CriteriaOwnerBean</class-b>
+    </mapping>
+
+    <mapping>
+        <class-a>com.epam.apartmentbooking.entity.CriteriaSpaceDTO</class-a>
+        <class-b>com.epam.apartmentbooking.bean.CriteriaSpaceBean</class-b>
+    </mapping>
+
+    <mapping>
+        <class-a>com.epam.apartmentbooking.entity.CriteriaAmenityDTO</class-a>
+        <class-b>com.epam.apartmentbooking.bean.CriteriaAmenityBean</class-b>
+    </mapping>
+
+    <mapping>
+        <class-a>com.epam.apartmentbooking.entity.CriteriaAvailabilityDTO</class-a>
+        <class-b>com.epam.apartmentbooking.bean.CriteriaAvailabilityBean</class-b>
+    </mapping>
+
+    <mapping>
+        <class-a>com.epam.apartmentbooking.entity.CriteriaPriceDTO</class-a>
+        <class-b>com.epam.apartmentbooking.bean.CriteriaPriceBean</class-b>
+
+        <!--<field custom-converter="com.epam.apartmentbooking.service.dozer.impl.BigDecimalToMonetaryAmountConverter">
+            <a>dailyMin</a>
+            <b>dailyMin</b>
+        </field>
+
+        <field custom-converter="com.epam.apartmentbooking.service.dozer.impl.BigDecimalToMonetaryAmountConverter">
+            <a>dailyMax</a>
+            <b>dailyMax</b>
+        </field>-->
+    </mapping>
+
+    <mapping>
+        <class-a>com.epam.apartmentbooking.entity.CriteriaTimeBookingDTO</class-a>
+        <class-b>com.epam.apartmentbooking.bean.CriteriaTimeBookingBean</class-b>
+
+        <field custom-converter="com.epam.apartmentbooking.service.dozer.impl.StringToDateConverter">
+            <a>checkIn</a>
+            <b>checkIn</b>
+        </field>
+
+        <field custom-converter="com.epam.apartmentbooking.service.dozer.impl.StringToDateConverter">
+            <a>checkOut</a>
+            <b>checkOut</b>
+        </field>
+    </mapping>
+
+</mappings>

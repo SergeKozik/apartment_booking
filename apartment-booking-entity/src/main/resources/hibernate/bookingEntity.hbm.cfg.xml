@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.epam.apartmentbooking.entity">
+    <class name="BookingEntity" table="T_BOOKING">
+        <id name="id" column="BO_ID">
+            <generator class="native"/>
+        </id>
+        <property name="checkIn" column="BO_CHECK_IN" type="java.util.Date"/>
+        <property name="checkOut" column="BO_CHECK_OUT" type="java.util.Date"/>
+        <property name="totalSum">
+            <column name="BO_TOTAL_SUM"/>
+            <type name=""
+        </property>
+        <one-to-one name="apartment" constrained="true" class="ApartmentEntity"/>
+    </class>
+</hibernate-mapping>

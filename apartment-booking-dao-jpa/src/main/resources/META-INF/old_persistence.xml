@@ -1,0 +1,38 @@
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" version="1.0">
+    <persistence-unit name="entities">
+
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+
+        <!--<mapping-file>/META-INF/jpa/apartmentEntity.orm.xml</mapping-file>
+        <class>com.epam.apartmentbooking.entity.ApartmentEntity</class>
+
+        <mapping-file>/META-INF/jpa/amenityEntity.orm.xml</mapping-file>
+        <class>com.epam.apartmentbooking.entity.AmenityEntity</class>-->
+
+        <!--<mapping-file>/META-INF/jpa/availabilityEntity.orm.cfg.xml</mapping-file>
+        <class>com.epam.apartmentbooking.entity.AvailabilityEntity</class>
+
+        <mapping-file>/META-INF/jpa/bookingEntity.orm.cfg.xml</mapping-file>
+        <class>com.epam.apartmentbooking.entity.BookingEntity</class>
+
+        <mapping-file>/META-INF/jpa/ownerEntity.orm.cfg.xml</mapping-file>
+        <class>com.epam.apartmentbooking.entity.OwnerEntity</class>
+
+        <mapping-file>/META-INF/jpa/priceEntity.orm.cfg.xml</mapping-file>
+        <class>com.epam.apartmentbooking.entity.PriceEntity</class>
+
+        <mapping-file>/META-INF/jpa/roleEntity.orm.cfg.xml</mapping-file>
+        <class>com.epam.apartmentbooking.entity.RoleEntity</class>
+
+        <mapping-file>/META-INF/jpa/spaceEntity.orm.cfg.xml</mapping-file>
+        <class>com.epam.apartmentbooking.entity.SpaceEntity</class>
+
+        <mapping-file>/META-INF/jpa/userEntity.orm.cfg.xml</mapping-file>
+        <class>com.epam.apartmentbooking.entity.UserEntity</class>-->
+
+
+        <properties>
+
+        </properties>
+    </persistence-unit>
+</persistence>

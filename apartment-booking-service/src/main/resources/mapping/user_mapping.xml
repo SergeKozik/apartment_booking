@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://dozer.sourceforge.net http://dozer.sourceforge.net/schema/beanmapping.xsd">
+
+    <mapping>
+        <class-a>com.epam.apartmentbooking.entity.UserEntity</class-a>
+        <class-b>com.epam.apartmentbooking.bean.UserRegisterBean</class-b>
+    </mapping>
+
+    <mapping>
+        <class-a>com.epam.apartmentbooking.entity.UserEntity</class-a>
+        <class-b>com.epam.apartmentbooking.bean.UserProfileBean</class-b>
+
+        <field custom-converter="com.epam.apartmentbooking.service.dozer.impl.RoleToStringConverter">
+            <a>role</a>
+            <b>role</b>
+        </field>
+    </mapping>
+
+    <mapping>
+        <class-a>com.epam.apartmentbooking.entity.UserEntity</class-a>
+        <class-b>com.epam.apartmentbooking.bean.UserBeanForUserService</class-b>
+
+        <field>
+            <a>email</a>
+            <b>username</b>
+        </field>
+
+        <field custom-converter="com.epam.apartmentbooking.service.dozer.impl.RoleToAuthoritiesConverter">
+            <a>role</a>
+            <b>authorities</b>
+        </field>
+    </mapping>
+</mappings>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<entity-mappings xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm
+http://xmlns.jcp.org/xml/ns/persistence/orm_1_0.xsd"
+                 version="2.1">
+
+    <description>Booking Entity</description>
+    <package>com.epam.apartmentbooking.entity</package>
+    <entity class="BookingEntity" name="BookingEntity">
+        <table name="T_BOOKING"/>
+        <convert converter="MoneyToDecimal.class" attribute-name="totalSum"/>
+        <attributes>
+            <id name="id">
+                <column name="BO_ID"/>
+                <generated-value strategy="IDENTITY"/>
+            </id>
+            <basic name="checkIn">
+                <column name="BO_CHECK_IN"/>
+            </basic>
+            <basic name="checkOut">
+                <column name="BO_CHECK_OUT"/>
+            </basic>
+            <basic name="totalSum">
+                <column name="BO_TOTAL_SUM"/>
+            </basic>
+            <basic name="dateBooked">
+                <column name="BO_DATE_BOOKED"/>
+                <temporal>DATE</temporal>
+            </basic>
+            <basic name="guests">
+                <column name="BO_GUESTS"/>
+            </basic>
+            <basic name="apartmentId">
+                <column name="T_APARTMENT_AP_ID"/>
+            </basic>
+            <basic name="userId">
+                <column name="T_USER_US_ID"/>
+            </basic>
+            <many-to-one name="apartment" fetch="LAZY" target-entity="ApartmentEntity">
+                <join-column name="T_APARTMENT_AP_ID"/>
+            </many-to-one>
+            <many-to-one name="user" target-entity="UserEntity">
+                <join-column name="T_USER_US_ID"/>
+            </many-to-one>
+        </attributes>
+    </entity>
+</entity-mappings>

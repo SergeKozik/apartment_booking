@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE tiles-definitions PUBLIC
+        "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+        "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+    <definition name="main.page" template="/WEB-INF/pages/container.jsp">
+        <put-attribute name="header" value="header-block"/>
+        <put-attribute name="main-content" value="/WEB-INF/pages/blocks/apartment_list.jsp"/>
+        <put-attribute name="include" value="/WEB-INF/pages/blocks/include.jsp"/>
+    </definition>
+
+    <definition name="header-block" template="/WEB-INF/pages/blocks/header.jsp">
+        <put-attribute name="booking-menu" value="/WEB-INF/pages/blocks/booking_menu.jsp"/>
+        <put-attribute name="main-menu" value="/WEB-INF/pages/blocks/main_menu.jsp"/>
+    </definition>
+
+    <definition name="header-simple" template="/WEB-INF/pages/blocks/header_simple.jsp">
+        <put-attribute name="main-menu" value="/WEB-INF/pages/blocks/main_menu.jsp"/>
+    </definition>
+
+    <definition name="register.page" extends="main.page">
+        <put-attribute name="main-content" value="/WEB-INF/pages/blocks/register_user.jsp"/>
+        <put-attribute name="header" value="header-simple"/>
+    </definition>
+
+    <definition name="login.page" extends="main.page">
+        <put-attribute name="header" value="header-simple"/>
+        <put-attribute name="main-content" value="/WEB-INF/pages/blocks/login.jsp"/>
+    </definition>
+
+    <definition name="user-bookings.page" extends="main.page">
+        <put-attribute name="main-content" value="/WEB-INF/pages/blocks/user_booking_list.jsp"/>
+        <put-attribute name="header" value="header-simple"/>
+    </definition>
+
+    <definition name="booking.page" extends="main.page">
+        <put-attribute name="main-content" value="/WEB-INF/pages/blocks/booking_page.jsp"/>
+        <put-attribute name="header" value="header-simple"/>
+    </definition>
+
+    <definition name="user-profile.page" extends="main.page">
+        <put-attribute name="main-content" value="/WEB-INF/pages/blocks/user_profile.jsp"/>
+        <put-attribute name="header" value="header-simple"/>
+    </definition>
+
+</tiles-definitions>

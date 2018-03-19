@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://dozer.sourceforge.net http://dozer.sourceforge.net/schema/beanmapping.xsd">
+
+    <mapping>
+        <class-a>com.epam.apartmentbooking.entity.BookingEntity</class-a>
+        <class-b>com.epam.apartmentbooking.bean.BookingViewBean</class-b>
+
+        <field custom-converter="com.epam.apartmentbooking.service.dozer.impl.StringToDateConverter">
+            <a>checkIn</a>
+            <b>checkIn</b>
+        </field>
+
+        <field custom-converter="com.epam.apartmentbooking.service.dozer.impl.StringToDateConverter">
+            <a>checkOut</a>
+            <b>checkOut</b>
+        </field>
+
+        <field>
+            <a>totalSum</a>
+            <b>price</b>
+        </field>
+
+        <field custom-converter="com.epam.apartmentbooking.service.dozer.impl.ApartmentIdToNameConverter">
+            <a>apartmentId</a>
+            <b>apartmentName</b>
+        </field>
+    </mapping>
+
+    <mapping>
+        <class-a>com.epam.apartmentbooking.entity.CriteriaTimeBookingDTO</class-a>
+        <class-b>com.epam.apartmentbooking.bean.BookingBookBean</class-b>
+
+        <field custom-converter="com.epam.apartmentbooking.service.dozer.impl.StringToDateConverter">
+            <a>checkIn</a>
+            <b>checkIn</b>
+        </field>
+
+        <field custom-converter="com.epam.apartmentbooking.service.dozer.impl.StringToDateConverter">
+            <a>checkOut</a>
+            <b>checkOut</b>
+        </field>
+    </mapping>
+
+    <mapping>
+        <class-a>com.epam.apartmentbooking.entity.BookingEntity</class-a>
+        <class-b>com.epam.apartmentbooking.bean.BookingBookBean</class-b>
+
+        <field custom-converter="com.epam.apartmentbooking.service.dozer.impl.StringToDateConverter">
+            <a>checkIn</a>
+            <b>checkIn</b>
+        </field>
+
+        <field custom-converter="com.epam.apartmentbooking.service.dozer.impl.StringToDateConverter">
+            <a>checkOut</a>
+            <b>checkOut</b>
+        </field>
+    </mapping>
+
+</mappings>

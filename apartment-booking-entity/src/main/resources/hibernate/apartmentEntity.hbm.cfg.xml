@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.epam.apartmentbooking.entity">
+    <class name="ApartmentEntity" table="T_APARTMENT">
+        <id name="id" column="AP_ID">
+            <generator class="native"/>
+        </id>
+        <many-to-one name="owner" class="OwnerEntity" column="T_OWNER_OW_ID" cascade="all"/>
+        <one-to-one name="space" class="SpaceEntity" cascade="all"/>
+        <one-to-one name="amenities" class="AmenityEntity" cascade="all"/>
+        <one-to-one name="availability" class="AvailabilityEntity" cascade="all"/>
+        <one-to-one name="price" class="PriceEntity" cascade="all"/>
+    </class>
+</hibernate-mapping>

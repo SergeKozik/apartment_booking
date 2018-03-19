@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<entity-mappings xmlns="http://xmlns.jcp.org/xml/ns/persistence/orm"
+                 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence/orm
+http://xmlns.jcp.org/xml/ns/persistence/orm_1_0.xsd"
+                 version="2.1">
+    <description>Space Entity</description>
+    <package>com.epam.apartmentbooking.entity</package>
+    <entity class="SpaceEntity" name="SpaceEntity">
+        <table name="T_SPACE"/>
+        <attributes>
+            <id name="apartmentId">
+                <column name="T_APARTMENT_AP_ID"/>
+            </id>
+            <basic name="accommodates">
+                <column name="SP_ACCOMMODATES"/>
+            </basic>
+            <basic name="beds">
+                <column name="SP_BEDS"/>
+            </basic>
+            <basic name="roomType">
+                <column name="SP_ROOM_TYPE"/>
+            </basic>
+            <one-to-one name="apartment" target-entity="ApartmentEntity">
+                <primary-key-join-column name="T_APARTMENT_AP_ID" referenced-column-name="AP_ID"/>
+            </one-to-one>
+        </attributes>
+    </entity>
+</entity-mappings>

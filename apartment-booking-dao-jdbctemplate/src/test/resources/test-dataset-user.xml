@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataset>
+  <T_USER US_ID="1" US_NAME="Bob" US_EMAIL="bob@bob.com" US_PASSWORD="Bob1"/>
+  <T_USER US_ID="2" US_NAME="Givi" US_EMAIL="givi@givi.com" US_PASSWORD="Givi1"/>
+  <T_USER US_ID="3" US_NAME="Angela" US_EMAIL="angela@angela.com" US_PASSWORD="Angela1"/>
+</dataset>
